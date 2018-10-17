@@ -13,6 +13,12 @@ const Route = (app) => {
         HelpUser.checkIfUserExists,
         User.signup
     );
+    app.post(
+        '/api/auth/login',
+        Middleware.validateUserLogin,
+        HelpUser.checkIfEmailExists,
+        User.login
+    );
 }
 
 export default Route;

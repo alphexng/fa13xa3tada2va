@@ -40,6 +40,18 @@ class UserQuery {
             values: [email]
         }
     }
+    /**
+     * Selects the User bio-data from the database
+     * @param {string} email - User Email
+     * @param {string} password - User Password
+     */
+    static loginQuery (email) {
+        return {
+            text: `
+            SELECT * FROM users WHERE email = $1`,
+            values: [email]
+        }
+    }
 }
 
 export default UserQuery;

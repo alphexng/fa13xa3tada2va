@@ -114,8 +114,54 @@ class Middleware {
         req.phone = phone;
         req.address = address;
         req.password = bcrypt.hashSync(password);
-
         next();
+    }
+
+    /**
+     * Validate all parameters supplied in request body
+     * @param {req} req - Parses all values in the route request body
+     * @param {resp} resp - Contains response object for route
+     * @param {next} next - Handles Middleware
+     */
+    static validateUserLogin(req,resp,next){
+        const email = req.body.email;
+        const password = req.body.password;
+        let errors = [];
+        if (email == null
+            || email.length === 0
+            || validate.hasWhiteSpace(email)) {
+            errors.push({
+                status: "error",
+                message: "Email field cannot be left empty"
+            })
+        }
+        if (validate.validateEmail(email) === false) {
+            errors.push({
+                status: "error",
+                message: "Invalid email syntax"
+            })
+        }
+        if (validate.validateInput(email, 8, 50) === false) {
+            errors.push({
+                status: "error",
+                message: "Email: Min Character - 8,Max character - 50"
+            })
+        }
+        if (password == null
+            || password.length === 0
+            || validate.hasWhiteSpace(password)) {
+            errors.push({
+                status: "error",
+                message: "Password field cannot be left empty"
+            })
+        }
+        if(errors == undefined || errors.length < 1){
+            req.email = email;
+            req.password = password;
+            next();
+        }else {
+            return resp.status(400).send(errors[0]);
+        }
     }
 }
 
