@@ -57,7 +57,7 @@ class User {
         .catch((err) => {
             return resp.status(400).send({
                 status:'error',
-                message:'There was an error in your form'
+                message:'There was an error in your login form'
             });
         });
     }
