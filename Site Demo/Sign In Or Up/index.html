@@ -105,8 +105,10 @@
                     $(".inputhide").fadeOut(400)
                     loginbtn.text('LOG IN');
                     $("#signingoogle").removeClass('active')
+                    $("form h1").text("LOG IN");
                } else if(loginbtn.hasClass('active')){
                     $(".inputhide").fadeIn(400)
+                    $("form h1").text("SIGN UP");
                     loginbtn.addClass('signup');
                     loginbtn.text('SIGN UP');
                     $("#signingoogle").addClass('active')
