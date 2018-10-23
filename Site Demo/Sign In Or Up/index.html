@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">    
+        <title>Sign In</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="sidenav">
+            <button><i class="fas fa-times"></i></button>
+                <ul>
+                    <li><a>HOME</a></li>
+                    <li><a>ABOUT</a></li>
+                    <li><a>SERVICES</a></li>
+                    <li><a>PRODUCTS</a></li>
+                    <li><a>CONTACT US</a></li>
+            </ul>
+        </div>
+        <div id="wrapper">           
+            <div id="header">
+                <img src="..\Images\logo.png">
+                <button><i class="fas fa-bars"></i></button>
+            </div>
+            <div id="text">
+                <h1>FIX IT</h1>
+                <p>FIX IT is a technology driven Start-up company whose aim is to leverage on information technology tools to provide a 360degrees solution to all current challenges faced by automobile users in Nigeria.</p>
+            </div>
+            <form id="login">
+                <h1>LOG IN</h1>
+                <div class="form-group inputhide">
+                    <label for="email">First Name:</label>
+                    <input type="text" name="email" id="first_name">
+                </div>
+                <div class="form-group inputhide">
+                    <label for="email">Last Name:</label>
+                    <input type="text" name="email" id="last_name">
+                </div>
+                <div id="loginform">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="text" name="password" id="password">
+                    </div>
+                </div>
+                <div class="form-group inputhide">
+                        <label for="password">Re-enter Password:</label>
+                        <input type="text" name="password" id="re_password">
+                </div>
+                <button id="signingoogle" type="button"> <span><img src="googleicon.svg"></span> Sign in with Google</button>                    
+                <div id="togglemode">
+                    <p>Don't have an account?</p>
+                    <button  type="button">Sign Up</button>
+                </div>
+            </form>
+            <div id="buttons">
+                <button id="loginbutton">LOG IN</button>
+                <button id="signupbutton">SIGN UP</button>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script>
+            var headerbtn = $("#header button");
+            var togglemodebtn = $("#togglemode button");
+            var loginbtn = $("#loginbutton");
+            var signupbtn = $("#signupbutton");
+            var sidenav = $("#sidenav");
+            headerbtn.click(function(){
+                sidenav.fadeIn();
+                headerbtn.css("display","none")
+            })
+            sidenav.find("button").click(function(){
+                sidenav.fadeOut(200,function(){
+                    headerbtn.css("display","inline-block")
+                });
+            })
+            loginbtn.click(function(){
+                signupbtn.fadeOut();
+                loginbtn.addClass('active');
+                $("#text h1, #text p").fadeOut(500,function(){
+                    $("form").fadeIn(500);
+                });
+            })
+            signupbtn.click(function(){
+                $("form h1").text("SIGN UP");
+                loginbtn.text('SIGN UP');
+                signupbtn.fadeOut(400,function(){
+                    $("#text h1, #text p").fadeOut(500,function(){
+                        $("form").fadeIn(500)
+                    });
+                    loginbtn.addClass('active signup')
+                        $(".inputhide").fadeIn(400);
+                })
+                $("#signingoogle").addClass('active');
+            })
+            togglemodebtn.click(function(){
+               $(this).parent()
+               .addClass('active')
+               if(loginbtn.hasClass('active signup')){
+                    loginbtn.removeClass('signup')
+                    $(".inputhide").fadeOut(400)
+                    loginbtn.text('LOG IN');
+                    $("#signingoogle").removeClass('active')
+               } else if(loginbtn.hasClass('active')){
+                    $(".inputhide").fadeIn(400)
+                    loginbtn.addClass('signup');
+                    loginbtn.text('SIGN UP');
+                    $("#signingoogle").addClass('active')
+                }
+                if($("form p").text() === 'Already have an account?'){
+                    $("form p").text('Dont have an account?');
+                }else{
+                    $("form p").text('Already have an account?');
+                }
+                if($("#togglemode button").text() === "Sign Up")
+                {
+                    $(this).text("Sign In")               
+                }else{
+                    $(this).text("Sign Up")               
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+/* sidenav style start */
+#sidenav{
+    float: right;
+    height: 100%;
+    width: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+#sidenav ul{
+    list-style: none;
+    padding: 0;
+}
+#sidenav ul li{
+    margin : 80px;
+    text-align: center;
+    font-size: 35px;
+}
+#sidenav ul li a{
+    color: darkgrey;
+    text-decoration: none;
+}
+#sidenav button{
+    border: none;
+    font-size: 70px;
+    background-color: transparent;
+    padding: 40px 40px;
+    color: white;
+}
+/* sidenav style end */
+#wrapper{
+    /* background-color:rgba(77, 192,243, 0.4); */
+    background-image: url("Images/Mobile.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+/* header style start */
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+}
+/* header style start */
+#header{
+    padding: 20px 20px;
+}
+#header button{
+    float: right;
+    border: none;
+    font-size: 70px;
+    background-color: transparent;
+    padding: 20px 10px;
+    color: white;
+}
+#header img{
+        height: 120px;
+}
+/* header style end */
+/* text style start */
+#text{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    color: white;
+    padding-top: 50px;
+}
+#text h1,#login h1{
+font-size: 100px;   
+font-weight: initial;
+}
+#text p{
+font-size: 50px;
+}
+/* text style end */

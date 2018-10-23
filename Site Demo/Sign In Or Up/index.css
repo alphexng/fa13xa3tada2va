@@ -1,0 +1,195 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+}
+
+/* sidenav style start */
+#sidenav{
+    float: right;
+    height: 100%;
+    width: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+#sidenav ul{
+    list-style: none;
+    padding: 0;
+}
+#sidenav ul li{
+    margin : 80px;
+    text-align: center;
+    font-size: 35px;
+    color: darkgrey;
+}
+#sidenav button{
+    border: none;
+    font-size: 70px;
+    background-color: transparent;
+    padding: 40px 40px;
+    color: white;
+}
+/* sidenav style end */
+#wrapper{
+    /* background-color:rgba(77, 192,243, 0.4); */
+    background-image: url("../Images/Mobile.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+/* header style start */
+#header{
+    padding: 20px 20px;
+}
+#header button{
+    float: right;
+    border: none;
+    font-size: 70px;
+    background-color: transparent;
+    padding: 20px 10px;
+    color: white;
+}
+#header img{
+        height: 120px;
+}
+/* header style end */
+
+/* text style start */
+#text{
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        padding-top: 50px;
+}
+#text h1,#login h1{
+    font-size: 100px;   
+    font-weight: initial;
+}
+#text p{
+    font-size: 50px;
+}
+/* text style end */
+
+/* form style start */
+form{
+    display: none;
+    width: 80%;
+    margin: auto;
+    color: white;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    height: 617px;
+}   
+form h1{
+    text-align: center;
+}
+.form-group{
+    margin: 50px 0;
+}
+.inputhide{
+    display: none;
+}
+form label{
+    display: inline-block;
+    font-size: 34px;
+    vertical-align: middle;
+    margin-right: 100px;
+    width: 25%;
+}
+form input{
+    height: 50px;
+    border: none;
+    width: 60%;
+    border-radius: 15px;
+}
+form #signingoogle{
+    float: right;
+    margin-right: 60px;
+    border: none;
+    background-color: white;
+    height: 80px;
+    width: 300px;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: grey;
+    box-shadow: 0px 4px 4px;
+    transition: 0.3s ease-out;
+}
+form #signingoogle.active{
+    transform: translate(-100px,-12px);
+}
+form span img{
+    vertical-align: bottom;
+    margin-right: 5px;
+    width: 24px;
+}
+#loginform.active{
+    position: absolute;        
+    top : 100px;
+}
+#loginform{
+    transition: 1s;
+}
+#togglemode{
+    top: 150px;
+    position: relative;
+}
+#togglemode.active{
+    top: 100px;
+}
+#togglemode p{
+    font-size: 40px;
+    display: inline-block;
+}
+#togglemode button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+/* form style end */
+
+/* button style start */
+#buttons{
+        width: 80%;
+        margin: auto;
+}
+#buttons button{
+    color: #3F94BA;
+    border : none;
+    margin: 80px;
+    height: 80px;
+    width: 200px;
+    background-color: white;
+    font-size: 35px;
+    font-weight: 800;
+    font-weight: bolder;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif
+}
+#loginbutton{
+    transition: 1s;
+}
+#loginbutton.active{
+    transform: translateY(-355px);
+}
+#loginbutton.active.signup{
+    transform: translateY(-25px);
+}
+#signupbutton{
+    position: relative;
+    transition: 1s;
+}
+button:focus{
+    outline: none;
+}
+/* button style end */
