@@ -1,5 +1,6 @@
 import Middleware from "../helpers/middleware";
 import User from "../controllers/userControl";
+import Contact from "../controllers/contactControl";
 import HelpUser from "../helpers/user";
 
 /**
@@ -18,6 +19,11 @@ const Route = (app) => {
         Middleware.validateUserLogin,
         HelpUser.checkIfEmailExists,
         User.login
+    );
+    app.post(
+        '/api/contact',
+        Middleware.validateContact,
+        Contact.sendContactMessage
     );
 }
 
